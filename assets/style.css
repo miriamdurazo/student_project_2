@@ -53,7 +53,7 @@ header {
 
 .box {
     width: 30%;
-    height: 180px;
+    /* height: 180px; */
     border: 2px solid #4a3c8a;
     border-style: dashed;
     margin: 10px;
