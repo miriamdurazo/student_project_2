@@ -14,90 +14,92 @@
     <p>Ever have trouble recalling the exact syntax for you favorite CSS code?<br> Give it a permanent home and add it to this page!<br> Select any snippet below and it'll automatically select all of the code for you to copy.</p>
 </header>
 
-<main class="container">
-    <div class="box" id="FlexboxRow">
-        <div class="subHeading">Flexbox Row</div>
-        <div class="description">Use these three properties to create a Flexbox row layout</div>
-        <div class="code-card">
-            <pre><code>
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-            </code></pre>
+<main>
+    <section class="row justify-center">
+        <div class="box" id="FlexboxRow">
+            <div class="subHeading">Flexbox Row</div>
+            <div class="description">Use these three properties to create a Flexbox row layout</div>
+            <div class="code-card">
+                <pre><code>
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+                </code></pre>
+            </div>
         </div>
-    </div>
-    <div  class="box" id="FlexboxColumn">
-        <div class="subHeading">Flexbox Column</div>
-        <div class="description">Use this to create a Flexbox column layout</div>
-        <div class="code-card">
-            <pre><code>
-.column {
-    display: flex;
-    flex-direction: column;
-}
-            </code></pre>
+        <div  class="box" id="FlexboxColumn">
+            <div class="subHeading">Flexbox Column</div>
+            <div class="description">Use this to create a Flexbox column layout</div>
+            <div class="code-card">
+                <pre><code>
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+                </code></pre>
+            </div>
         </div>
-    </div>
-    <div  class="box" id="CSSGrid">
-        <div class="subHeading">CSS Grid Layout</div>
-        <div class="description">Build a 12-column layout using a CSS Grid</div>
-        <div class="code-card">
-            <pre><code>
-.grid {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(12, 1fr);
-}
-            </code></pre>
+        <div  class="box" id="CSSGrid">
+            <div class="subHeading">CSS Grid Layout</div>
+            <div class="description">Build a 12-column layout using a CSS Grid</div>
+            <div class="code-card">
+                <pre><code>
+    .grid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(12, 1fr);
+    }
+                </code></pre>
+            </div>
         </div>
-    </div>
-    <div  class="box" id="LinearGradients">
-        <div class="subHeading">Linear Gradients</div>
-        <div class="description">This create a background linear gradient from top to bottom</div>
-        <div class="code-card">
-            <pre><code>
-.linear-gradient-background {
-    background-image: linear-gradient(
-        rgba(232, 102, 236, 0.3) 0%
-        rgba(232, 102, 236, 0.6) 100%
-        );
-}
-            </code></pre>
+        <div  class="box" id="LinearGradients">
+            <div class="subHeading">Linear Gradients</div>
+            <div class="description">This create a background linear gradient from top to bottom</div>
+            <div class="code-card">
+                <pre><code>
+    .linear-gradient-background {
+        background-image: linear-gradient(
+            rgba(232, 102, 236, 0.3) 0%
+            rgba(232, 102, 236, 0.6) 100%
+            );
+    }
+                </code></pre>
+            </div>
         </div>
-    </div>
-    <div class="box" id="BoxTransitionGlow">
-        <div class="subHeading">Box Transition Glow</div>
-        <div class="description">Use transition and box shadows to glow on hover</div>
-        <div class="code-card">
-            <pre><code>
-.code-card .card-header {
-    border-radius: 8px;
-    transition: all 0.5s ease-in-out;
-}
+        <div class="box" id="BoxTransitionGlow">
+            <div class="subHeading">Box Transition Glow</div>
+            <div class="description">Use transition and box shadows to glow on hover</div>
+            <div class="code-card">
+                <pre><code>
+    .code-card .card-header {
+        border-radius: 8px;
+        transition: all 0.5s ease-in-out;
+    }
 
-.code-card:hover, 
-.code-card:hover .card-header {
-    box-shadow: inset 0px 0px 8px
-rgba(232, 102, 236, 1) 0 0 15px
-rgba(232, 102, 236, 4);
-}
-            </code></pre>
+    .code-card:hover, 
+    .code-card:hover .card-header {
+        box-shadow: inset 0px 0px 8px
+    rgba(232, 102, 236, 1) 0 0 15px
+    rgba(232, 102, 236, 4);
+    }
+                </code></pre>
+            </div>
         </div>
-    </div>
-    <div  class="box" id="OverlayCard">
-        <div class="subHeading">Overlay Card with Title</div>
-        <div class="description">Use position properties and negative margins to raise elements higher than their natural starting point</div>
-        <div class="code-card">
-            <pre><code>
-.card-header {
-    position: relative;
-    margin-top: -20px;
-}
-            </code></pre>
+        <div  class="box" id="OverlayCard">
+            <div class="subHeading">Overlay Card with Title</div>
+            <div class="description">Use position properties and negative margins to raise elements higher than their natural starting point</div>
+            <div class="code-card">
+                <pre><code>
+    .card-header {
+        position: relative;
+        margin-top: -20px;
+    }
+                </code></pre>
+            </div>
         </div>
-    </div>
+    </section>
 </main>
 
 <footer>Made with &#128156; and CSS
