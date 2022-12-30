@@ -95,20 +95,33 @@ header {
     position: absolute;
     width: 100%;
     top: 60px;
+
 }
 
-.pre .subHeading {
+.code-card:hover {
+    /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
+
+  box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--heliotrope);
+
+}
+
+pre .subHeading {
                 border-radius: 8px;
                 transition: all 0.5s ease-in-out;
             }
 
-.pre:hover, 
-.pre:hover .subHeading {
+pre:hover, 
+pre:hover .subHeading {
     box-shadow: inset 0px 0px 8px
 rgba(232, 102, 236, 1) 0 0 15px
 rgba(232, 102, 236, 4);
 }
 
+  /* on <pre> click, select all contents so the code is highlighted */
+  .code-card pre:active {
+    user-select: all;
+  }
+  
 pre {
     display: block;
     /* background-color: var(--main-color); */
