@@ -2,91 +2,123 @@
     /* --main-color: rgb(73, 21, 196); */
     --main-color: #4a3c8a;
     --secondary-color: #004e99;
+    --background-color: #e7e7e7;
     --text2: 12px;
     --rad: 6px;
 }
 
-* {
-    font-family: Arial, Helvetica, sans-serif;
+html {
+    /* set 1rem to 10px instead of native 16px to make it easier to calculate font-size values for the rest of the page (e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
+    font-size: 62.5%;
 }
 
 body {
     /* background-color: #F4ECF7; */
-    background-color: #e7e7e7;
+    background-color: var(--background-color);
     /* border: 2px solid red; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.5;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0.625rem;
     color: var(--main-color);
-    font-weight: bold;
-    font-size: 30px;
-    padding: 15px;
+    font-weight: 750;
+    line-height: 1.1;
     /* border: 2px solid #5E3D76; */
 }
 
-header p {
+h1 {
+    /* 3.5rem = 35px (3.5 * 10px) */
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
     color: var(--secondary-color);
-    font-weight: lighter;
-    font-size: var(--text2);
-    padding: 10px;
+    font-size: 1.4rem;
+}
+  
+code {
+    font-family: monospace;
 }
 
 header {
-    padding: 40px;
+    width: 96%;
+    margin: 0 auto;
+    padding: 2.5rem;
     text-align: center;
-    
-  }
+}
+
+main {
+    width: 96%;
+    margin: 2rem auto;
+}
 
 .row {
     /* border: 2px solid black; */
-    height: 480px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
 }
 
-#FlexboxColumn {
-
+.justify-center {
+    justify-content: center;
 }
-
 
 .card-column {
-    width: 30%;
-    /* height: 180px; */
-    border: 2px solid #4a3c8a;
-    border-style: dashed;
-    margin: 10px;
-    position: relative;
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5;
+    /* position: relative; */
     /* z-index: 1; */
 
 }
 
-.card-header {
+/* The code below is to make each code card a flexbox column to align and justify content within it */
+.code-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
     color: var(--main-color);
-    background-color: #e7e7e7;
-    font-weight: bold;
-    font-size: 20px;
-    width: 90%;
-    border: 2px solid #4a3c8a;
-    border-radius: var(--rad);
-    padding: 4px;
-    z-index: 2;
-    position: absolute;
-    top: -17px;
-    left: 12.5px;
-    display: block;
+    
+    /* outline is like border, but on the outside of the box instead of inside */
+    outline: 2px dashed var(--main-color);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
 }
 
+.code-card .card-header {
+    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    color: var(--main-color);
+    background-color: var(--background-color);
+    border: 2px solid var(--main-color);
+    border-radius: var(--rad);
+}
 
 .card-body {
-    display: block;
     color: var(--secondary-color);
     /* border: 2px solid black; */
-    padding: 20px;
-    position: relative;
-    top: 20px;
-    font-size: var(--text2);
+    font-size: 1.2rem;
 }
 
 
@@ -130,7 +162,6 @@ pre {
     padding: 5px;
     color: white;
     display: block;
-    font-family: monospace;
     font-size: 10px;
     white-space: pre-wrap;
     background: linear-gradient(
@@ -143,8 +174,8 @@ footer {
     text-align: center;
     color: var(--main-color);
     font-weight: bold;
-    font-size: 12px;
-    padding: 15px;
+    font-size: 1.5rem;
+    margin: 1.5rem;
 
 }
   
