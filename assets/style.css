@@ -3,8 +3,13 @@
     --main-color: #4a3c8a;
     --secondary-color: #004e99;
     --background-color: #e7e7e7;
-    --text2: 12px;
     --rad: 6px;
+}
+
+/* set content highlight color and background */
+::selection {
+    background-color: #b5b5d6;
+    color: var(--main-color);
 }
 
 html {
@@ -127,32 +132,32 @@ main {
 
 }
 
+/* each card's code block grows to the height of the largest code block on the page, making each card even in height */
+.code-card .code-block {
+    flex-grow: 1;
+}
+  
 pre .card-header {
-                border-radius: 8px;
-                transition: all 0.5s ease-in-out;
-            }
-
-pre:hover, 
-pre:hover .card-header {
-    box-shadow: inset 0px 0px 8px
-rgba(232, 102, 236, 1) 0 0 15px
-rgba(232, 102, 236, 4);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
 }
 
-  /* on <pre> click, select all contents so the code is highlighted */
-  .code-card pre:active {
+
+
+/* on <pre> click, select all contents so the code is highlighted */
+.code-card pre:active {
     user-select: all;
-  }
+}
   
-pre {
-    display: block;
+.code-card pre {
     /* background-color: var(--main-color); */
+    white-space: pre-wrap;
+    overflow: auto;
     border-radius: var(--rad);
-    margin: 10px;
-    padding: 5px;
+    padding: 1.2rem 1rem;
     color: white;
-    display: block;
-    font-size: 10px;
+    display: flex;
+    align-items: center;
     white-space: pre-wrap;
     background: linear-gradient(
                         #4a3c8a 0%,
@@ -171,7 +176,7 @@ footer {
 
 /* Responsive design: Media queries */
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 668px) {
     /* on tablets, set columns to only be 50% of the width and not grow */
     .card-column {
       flex: 0 0 50%;
@@ -191,7 +196,7 @@ footer {
     }
   
     .card-column {
-      flex: 0 0 33.333%;
-      max-width: 33.333%;
+      flex: 0 0 33%;
+      max-width: 33%;
     }
   }
