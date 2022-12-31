@@ -84,9 +84,6 @@ main {
     /* when the screen resizes, make it so our columns don't jump in size */
     transition: flex-basis 500ms linear;
     margin-bottom: 1.5;
-    /* position: relative; */
-    /* z-index: 1; */
-
 }
 
 /* The code below is to make each code card a flexbox column to align and justify content within it */
@@ -113,6 +110,7 @@ main {
     background-color: var(--background-color);
     border: 2px solid var(--main-color);
     border-radius: var(--rad);
+    transition: all 0.5s ease-in-out;
 }
 
 .card-body {
@@ -121,19 +119,11 @@ main {
     font-size: 1.2rem;
 }
 
-
-.card {
-    /* border: 2px solid black; */
-    /* position: absolute; */
-    width: 100%;
-    top: 60px;
-
-}
-
-.code-card:hover {
+.code-card:hover,
+.code-card:hover .card-header {
     /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
 
-  box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--heliotrope);
+    box-shadow: inset 0px 0px 8px var(--secondary-color), 0 0 12px var(--secondary-color);
 
 }
 
@@ -178,4 +168,30 @@ footer {
     margin: 1.5rem;
 
 }
+
+/* Responsive design: Media queries */
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+    /* on tablets, set columns to only be 50% of the width and not grow */
+    .card-column {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
   
+    /* select the last child to grow to full width if it has space to grow */
+    .card-column:last-child {
+      flex-grow: 1;
+    }
+  }
+  
+  /* media query for larger screens */
+  @media screen and (min-width: 992px) {
+    header {
+      width: 75%;
+    }
+  
+    .card-column {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+    }
+  }
